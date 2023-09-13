@@ -34,7 +34,7 @@ st.bar_chart(
 )
 
 st.subheader("🙋🏻:orange[회원 별] 챌린지 참여 인증 확인")
-st.caption("챌린지 인증 횟수는 채팅 url 올린 것 기준으로 카운트하였습니다.")
+st.caption("ℹ️ 챌린지 인증 횟수는 채팅 url 올린 것 기준으로 카운트하였습니다.")
 
 challenge_groupby_user_name = challenge_url_count_df.groupby(['user_name'])['user_name'].size().reset_index(name='user_name_count')
 challenge_result_df = challenge_groupby_user_name.fillna(0)
@@ -45,6 +45,8 @@ target_count = st.selectbox(
     '참여 횟수 별 회원 리스트 조회하기',
     (count_sorted))
 target_count_df = challenge_result_df[challenge_result_df.user_name_count == target_count]
+n = len(target_count_df.user_name)
+st.info(f'총 {target_count}회 인증한 회원은 {n}명 입니다 !', icon="📢")
 st.dataframe(target_count_df)
 
 target_user_name = st.selectbox(
@@ -105,14 +107,3 @@ st.area_chart(
     x='year_month_day',
     y= total_chart_df_columns
 )
-
-
-
-
-
-
-
-
-
-
-
