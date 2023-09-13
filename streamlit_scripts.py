@@ -70,7 +70,6 @@ end_date = new_date_obj.strftime('%Y-%m-%d')
 def filer_df_by_date(df, start_date, end_date):
     return df[(df['date_time'] >= start_date) & (df['date_time'] <= end_date)]
 
-in_out_df_today = filer_df_by_date(in_out_df, start_date, end_date)
 my_katalk_df_today = filer_df_by_date(my_katalk_df, start_date, end_date)
 challenge_url_df_today = filer_df_by_date(challenge_url_df, start_date, end_date)
 weekday_today = challenge_url_df_today.weekday.unique()
