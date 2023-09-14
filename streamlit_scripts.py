@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd 
 import numpy as np
 from datetime import datetime, timedelta
-import webbrowser
+# import webbrowser
 
 my_katalk_df = pd.read_csv("preprocessed_data/" +  "challenge_msg_2023-09-14-00-40-11.csv")
 
@@ -18,8 +18,8 @@ user_sorted = sorted(user)
 user_sorted.insert(0, '전체보기')
 
 st.header(":blue[로마드] :red[2주 챌린지] 현황")
-if st.button('로마드 카페 바로가기 !'):
-    webbrowser.open_new_tab("https://cafe.naver.com/roalnam")
+#if st.button('로마드 카페 바로가기 !'):
+#    webbrowser.open_new_tab("https://cafe.naver.com/roalnam")
 
 st.text('챌린지 인증 채팅 분포')
 challenge_groupby_df = challenge_url_count_df.groupby(['year_month_day'])['year_month_day'].size().reset_index(name='user_name_day_count')
