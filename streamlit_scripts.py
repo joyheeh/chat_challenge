@@ -4,7 +4,7 @@ import numpy as np
 from datetime import datetime, timedelta
 # import webbrowser
 
-my_katalk_df = pd.read_csv("preprocessed_data/" +  "challenge_msg_20230915110715.csv")
+my_katalk_df = pd.read_csv("preprocessed_data/" +  "challenge_msg_2023-09-16.csv")
 
 challenge_url_df = my_katalk_df[my_katalk_df['text'].str.contains('https://cafe.naver.com/roalnam/')]
 challenge_url_count_df = challenge_url_df[['year_month_day','user_name','text', 'user_class']]
